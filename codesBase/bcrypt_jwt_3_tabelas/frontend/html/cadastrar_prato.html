@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/progPrato.js"defer></script>
+    <title>Sistema Restaturante</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Princial</a>
+            <a href="./cadastrar_cliente.html">Cadastrar Cliente</a>
+            <a href="./cadastrar_prato.html">Cadastrar Prato</a>
+            <a href="./logout.html">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Cadastrar Prato</h1>
+        <br>
+        <form>
+            <label for="nomePrato">Digite o nome do Prato:</label><br>
+            <input type="text" id="nomePrato" placeholder="nome do prato"><br>
+            <label for="categoria">Digite a categoria do prato:</label><br>
+            <input type="text" id="categoria" placeholder="categoria"><br>
+            <label for="precoBase">Digite o Preço Base:</label><br>
+            <input type="text" id="precoBase" placeholder="precoBase"><br><br>
+            <button type="submit" id="btnPrato">Cadastrar</button><br><br>
+        </form>
+        <div id="res"></div>
+        <br><br>
+    </main>
+    <footer>
+        by Carlos &copy; &trade;
+    </footer>
+</body>
+</html>

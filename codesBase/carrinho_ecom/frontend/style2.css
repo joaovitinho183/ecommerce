@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(26, 122, 185);
+    color: white;
+    font-family: Verdana;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    padding: 6px 10px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background-color: rgb(143, 215, 250);
+    border-radius: 8px;
+}
+
+main {
+    margin-top: 24px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#total {
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.btn-comprar {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-comprar:hover {
+    background-color: rgb(104, 170, 214);
+}
+
+footer {
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}

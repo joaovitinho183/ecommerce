@@ -1,0 +1,115 @@
+/* ====== ESTILOS GERAIS ====== */
+body {
+    background-color: rgb(79, 193, 255);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== CABEÇALHO ====== */
+header.menu {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header.menu nav a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin: 0 4px;
+    transition: background-color 0.3s;
+}
+
+header.menu nav a:hover {
+    background-color: rgb(143, 215, 250);
+    border-radius: 8px;
+}
+
+/* ====== ÁREA PRINCIPAL ====== */
+main.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    margin: 20px;
+    justify-items: center;
+    align-content: center;
+}
+
+/* ====== PRODUTOS ====== */
+.produto {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.produto:hover {
+    transform: scale(1.03);
+}
+
+.produto figure {
+    margin: 0;
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.produto figcaption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ====== CONTROLES (input e botão) ====== */
+.controle-produto {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.input-qtde, 
+.controle-produto button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 6px 10px;
+}
+
+.input-qtde {
+    width: 60px;
+    margin-right: 8px;
+}
+
+.controle-produto button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controle-produto button:hover {
+    background-color: rgb(104, 186, 214);
+}
+
+/* ====== RODAPÉ ====== */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.9;
+}
