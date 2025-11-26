@@ -49,6 +49,11 @@ body {
     gap: 60px;
 }
 
+.header .conta button {
+    background-color: transparent;
+    border: 0;
+}
+
 /* HERO */
 .hero {
     height: 75vh;
@@ -152,6 +157,7 @@ main {
 .btn-card:hover {
     background: #990000;
 }
+
 /* ===========================
    FOOTER
    =========================== */

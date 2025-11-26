@@ -22,7 +22,8 @@ btnlogin.addEventListener('click', (e) => {
         .then(resp => resp.json())
         .then(dados => {
             res.innerHTML = `${dados.message}`
-            sessionStorage.setItem('token',dados.token)
+            sessionStorage.setItem('token', dados.token)
+            sessionStorage.setItem('codUsuario', dados.codUsuario)
         })
         .catch((err) => {
             console.error('Erro ao fazer login', err)

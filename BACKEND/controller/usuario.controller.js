@@ -70,5 +70,16 @@ const cadastrar = async (req, res) => {
 
 }
 
+const listar = async (req, res) => {
+    const codUsuario = req.params.id
+    try {
+        const dados = await Usuario.findOne({ where: { codUsuario: codUsuario } })
+        res.status(201).json(dados)
+    } catch (err) {
+        console.error('Erro ao listar usuario', err)
+        res.status(500).json({ message: "Erro ao listar usuario!" })
+    }
+}
 
-module.exports = { cadastrar }
+
+module.exports = { cadastrar, listar }

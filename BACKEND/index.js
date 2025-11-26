@@ -21,8 +21,9 @@ app.use(cors())
 
 app.post('/login', authController.login)
 app.post('/usuario', usuarioController.cadastrar)
+app.get('/usuario/:id', usuarioController.listar)
 
-app.use(authMiddleware)
+// app.use(authMiddleware)
 
 
 app.get('/', (req, res) => {
