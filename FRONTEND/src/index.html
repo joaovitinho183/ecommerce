@@ -5,31 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/progIndex.js" defer></script>
     <link rel="shortcut icon" href="../public/imgs/logo.png" type="image/x-icon">
     <title>Carrera One</title>
 </head>
 
 <body>
-    <header>
-        <img class="logo" src="../public/imgs/logo-removebg-preview.png" alt="" width="100px">
-        <div class="navegacao">
-            <nav>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-            </nav>
-        </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img class="logo" src="../public/imgs/logo-removebg-preview.png" alt="Logo Carrera One" width="100px">
+
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Modelos</a>
+            <a href="#">Sobre</a>
+        </nav>
+
+
         <div class="conta">
-            <a href="./html/loginUsuario.html"><img src="../public/imgs/user.png" alt="" width="40px"></a>
+            <button id="loginUsuario">
+                <img src="../public/imgs/user.png" width="40">
+            </button>
         </div>
     </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Exclusividade. Velocidade. Sofisticação.</h1>
+            <p>Descubra a nova geração de veículos Porsche em um catálogo feito para apaixonados.</p>
+            <a class="btn-hero" href="#">Ver catálogo</a>
+        </div>
+    </section>
+
+    <!-- CARDS -->
     <main>
-        <h1>sdko</h1>
-        <h1>sdko</h1>
+        <section class="modelos">
+            <h2>Modelos em Destaque</h2>
+
+            <div class="cards-container">
+
+                <div class="car-card">
+                    <img src="../public/imgs/911.jpg" alt="">
+                    <h3>Porsche 911 Turbo S</h3>
+                    <p>O ápice da engenharia esportiva, agora com tecnologia T-Hybrid.</p>
+                    <a href="#" class="btn-card">Ver mais</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="../public/imgs/taycan.jpg" alt="">
+                    <h3>Porsche Taycan Turbo S</h3>
+                    <p>O elétrico mais potente da Porsche, com aceleração brutal.</p>
+                    <a href="#" class="btn-card">Ver mais</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="../public/imgs/panamera.jpg" alt="">
+                    <h3>Porsche Panamera Turbo S</h3>
+                    <p>Luxo e performance híbrida em um sedã incomparável.</p>
+                    <a href="#" class="btn-card">Ver mais</a>
+                </div>
+
+            </div>
+        </section>
     </main>
+
+    <!-- FOOTER -->
     <footer>
-        <h1>sdko</h1>
+        <div class="footer-container">
+
+            <div>
+                <div class="footer-logo">CARRERA <span>ONE</span></div><br>
+                <p>Exclusividade, velocidade e sofisticação em um só lugar.</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Redes Sociais</h4><br>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ojoaovitor08/"><img src="../public/imgs/instagram.png" alt=""
+                            width="30"></a>
+                    <a href="https://github.com/joaovitinho183"><img src="../public/imgs/github.png" alt=""
+                            width="30"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Carrera One. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
 </body>
 
 </html>

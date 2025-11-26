@@ -1,33 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/* PALETA */
+:root {
+    --black: #0A0A0A;
+    --graphite: #2A2A2A;
+    --silver: #CFCFCF;
+    --red: #D10000;
+    --white: #F6F6F6;
+}
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Oswald";
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
 }
 
-header {
-    background-color: #2A2A2A;
-    color: #F6F6F6;
+body {
+    background: var(--white);
+}
+
+/* HEADER */
+.header {
+    background: var(--black);
+    padding: 15px 40px;
+
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 20px;
 }
 
-header .conta {
+.header .menu {
     display: flex;
-    justify-content: end;
+    gap: 35px;
 }
 
+.header .menu a {
+    text-decoration: none;
+    color: var(--silver);
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.header .menu a:hover {
+    color: var(--red);
+}
+
+.header .conta {
+    display: flex;
+    gap: 60px;
+}
+
+/* HERO */
+.hero {
+    height: 75vh;
+    background: url('../public/imgs/hero_porsche.jpg') center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.hero-text h1 {
+    font-size: 55px;
+    color: var(--black);
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin: 15px 0;
+    color: var(--graphite);
+}
+
+.btn-hero {
+    padding: 12px 26px;
+    background: var(--red);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-hero:hover {
+    background: #990000;
+}
+
+/* MAIN */
 main {
-    background-color: #F6F6F6;
-    height: auto;
-    color: #2A2A2A;
+    color: var(--black);
+    padding-bottom: 60px;
 }
 
+.modelos {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.modelos h2 {
+    font-size: 40px;
+}
+
+/* CARDS */
+.cards-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.car-card {
+    width: 310px;
+    background: var(--black);
+    border: 2px solid var(--graphite);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.car-card:hover {
+    transform: scale(1.05);
+}
+
+.car-card img {
+    width: 100%;
+}
+
+.car-card h3 {
+    font-size: 24px;
+    color: var(--white);
+    margin: 15px;
+}
+
+.car-card p {
+    font-size: 16px;
+    color: var(--silver);
+    margin: 0 15px 18px 15px;
+}
+
+.btn-card {
+    display: inline-block;
+    margin: 0 15px 20px 15px;
+    padding: 10px 20px;
+
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    background: #990000;
+}
+/* ===========================
+   FOOTER
+   =========================== */
 footer {
-    background-color: #2A2A2A;
-    color: #F6F6F6;
+    background: var(--black);
+    color: var(--silver);
+    padding: 60px 0 25px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    width: 85%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons img {
+    transition: 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid var(--graphite);
+    padding-top: 20px;
+    font-size: 14px;
 }
