@@ -28,22 +28,6 @@ body {
     align-items: center;
 }
 
-.header .menu {
-    display: flex;
-    gap: 35px;
-}
-
-.header .menu a {
-    text-decoration: none;
-    color: var(--silver);
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.header .menu a:hover {
-    color: var(--red);
-}
-
 .header .conta {
     display: flex;
     gap: 60px;
@@ -56,7 +40,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 75vh;
+    height: 20vh;
     background: url('../public/imgs/hero_porsche.jpg') center/cover no-repeat;
 
     display: flex;
@@ -73,20 +57,6 @@ body {
     font-size: 20px;
     margin: 15px 0;
     color: var(--graphite);
-}
-
-.btn-hero {
-    padding: 12px 26px;
-    background: var(--red);
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: .3s;
-}
-
-.btn-hero:hover {
-    background: #990000;
 }
 
 /* MAIN */
@@ -119,11 +89,11 @@ main {
     border: 2px solid var(--graphite);
     border-radius: 15px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .car-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .car-card img {
@@ -140,6 +110,13 @@ main {
     font-size: 16px;
     color: var(--silver);
     margin: 0 15px 18px 15px;
+}
+
+.car-card button {
+    background-color: transparent;
+    border: 0;
+    width: 40px;
+    margin: 10px;
 }
 
 .btn-card {

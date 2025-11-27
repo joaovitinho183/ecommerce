@@ -74,12 +74,31 @@ const listar = async (req, res) => {
     const codUsuario = req.params.id
     try {
         const dados = await Usuario.findOne({ where: { codUsuario: codUsuario } })
-        res.status(201).json(dados)
+        if (!dados) {
+            return res.status(404).json({ message: "Usuário não encontrado!" })
+        }
+
+        res.status(200).json(dados)
     } catch (err) {
         console.error('Erro ao listar usuario', err)
         res.status(500).json({ message: "Erro ao listar usuario!" })
     }
 }
+const apagar = async (req, res) => {
+    const codUsuario = req.params.id
+    try {
+        const dados = await Usuario.findByPk(codUsuario)
+        if (dados) {
+            await Usuario.destroy({ where: { codUsuario: codUsuario } })
+            res.status(204).json({ message: "Dados excluídos com sucesso!" })
+        } else {
+            res.status(404).json({ message: "Usuario não encontrado!" })
+        }
+    } catch (err) {
+        console.error('Erro ao apagar os dados do usuario', err)
+        res.status(500).json({ message: 'Erro ao apagar os dados do usuario' })
+    }
+}
 
 
-module.exports = { cadastrar, listar }
+module.exports = { cadastrar, listar, apagar }

@@ -9,13 +9,13 @@ const login = async (req, res) => {
         const usuario = await Usuario.findOne({ where: { email: valores.email } })
 
         if (!usuario) {
-            return res.status(404).json({ error: "Usuario não encontrado!" })
+            return res.status(404).json({ message: "Usuario não encontrado!" })
         }
 
         const senhaValida = await compareSenha(valores.senha, usuario.senha)
 
         if (!senhaValida) {
-            return res.status(401).json({ error: "Senha inválida!" })
+            return res.status(401).json({ message: "Senha inválida!" })
         }
 
         const token = gerarToken({
@@ -26,7 +26,7 @@ const login = async (req, res) => {
         res.status(200).json({ message: "Login realizado com sucesso!", token, codUsuario: usuario.codUsuario })
 
     } catch (err) {
-        res.status(500).json({ error: "Erro ao realizar o login!" })
+        res.status(500).json({ message: "Erro ao realizar o login!" })
     }
 }
 

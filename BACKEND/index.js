@@ -22,6 +22,7 @@ app.use(cors())
 app.post('/login', authController.login)
 app.post('/usuario', usuarioController.cadastrar)
 app.get('/usuario/:id', usuarioController.listar)
+app.delete('/usuario/:id', usuarioController.apagar)
 
 // app.use(authMiddleware)
 

@@ -146,6 +146,19 @@ main {
     transform: scale(1.03);
 }
 
+.btns{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+    width: 40px;
+}
+
+
 /* ===========================
    FOOTER
    =========================== */

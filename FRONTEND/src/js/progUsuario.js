@@ -1,5 +1,7 @@
 let codUsuario = sessionStorage.getItem('codUsuario');
 let res = document.getElementById('res');
+let apagar = document.getElementById('apagar');
+let atualizar = document.getElementById('atualizar');
 
 onload = () => {
     fetch(`http://localhost:3000/usuario/${codUsuario}`)
@@ -10,17 +12,31 @@ onload = () => {
         .catch(err => {
             console.error('Erro ao listar usuário', err);
         });
-};
+    };
+    
+    apagar.addEventListener('click', () => {
+        let confirma = confirm("Você tem certeza que quer excluir este Usuario?");
+        if (confirma === true) {
+            fetch(`http://localhost:3000/usuario/${codUsuario}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(dados => {
+                sessionStorage.clear()
+                window.location.href = '../index.html'
+            })
+            .catch(err => {
+                console.error('Erro ao apagar usuário', err);
+            });
+        }
+    })
 
 function gerarPerfil(dados) {
     return `
         <div class="perfil-card">
             <h2>Perfil do Usuário</h2>
-
-            <div class="perfil-item">
-                <span class="label">Código:</span>
-                <span class="valor">${dados.codUsuario}</span>
-            </div>
 
             <div class="perfil-item">
                 <span class="label">Nome:</span>
