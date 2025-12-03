@@ -1,8 +1,24 @@
 const Produto = require('../models/Produto');
 const Estoque = require('../models/Estoque');
 
+// Ajusta o caminho da imagem para funcionar no Express
+const ajustarCaminhoImagem = (imagem) => {
+    if (!imagem) return null;
+
+    // remove "/public/" caso venha assim
+    imagem = imagem.replace(/^\/?public\//, "");
+    // remove "/imgs/" duplicado
+    imagem = imagem.replace(/^\/?imgs\//, "");
+
+    // Caminho correto servido pelo Express
+    return `/imgs/${imagem}`;
+};
+
 const cadastrar = async (req, res) => {
-    const valores = req.body;
+    let valores = req.body;
+
+    // Ajuste automático da imagem
+    valores.imagem_url = ajustarCaminhoImagem(valores.imagem_url);
 
     if (!valores.nome || !valores.descricao || !valores.modelo || !valores.preco || !valores.imagem_url || !valores.quantidade) {
         return res.status(400).json({ message: 'Preencha todos os campos' });
@@ -41,15 +57,10 @@ const apagar = async (req, res) => {
             return res.status(404).json({ message: "Produto não encontrado!" });
         }
 
-        // 1. DELETAR REGISTROS DEPENDENTES (Estoque)
-        // Isso garante que não haverá restrições de chave estrangeira ao deletar o Produto.
         await Estoque.destroy({ where: { idProduto: codProduto } });
+        await Produto.destroy({ where: { codProduto } });
 
-        // 2. DELETAR O REGISTRO PRINCIPAL (Produto)
-        await Produto.destroy({ where: { codProduto: codProduto } });
-        
         res.status(200).json({ message: "Produto removido com sucesso!" });
-
     } catch (err) {
         console.error('Erro ao apagar produto', err);
         res.status(500).json({ message: 'Erro ao apagar produto!' });
@@ -58,7 +69,11 @@ const apagar = async (req, res) => {
 
 const atualizar = async (req, res) => {
     const codProduto = req.params.id;
-    const valores = req.body;
+    let valores = req.body;
+
+    if (valores.imagem_url) {
+        valores.imagem_url = ajustarCaminhoImagem(valores.imagem_url);
+    }
 
     try {
         const dados = await Produto.findByPk(codProduto);
@@ -69,7 +84,6 @@ const atualizar = async (req, res) => {
 
         await Produto.update(valores, { where: { codProduto } });
         res.status(200).json({ message: "Produto atualizado com sucesso!" });
-
     } catch (err) {
         console.error('Erro ao atualizar produto', err);
         res.status(500).json({ message: 'Erro ao atualizar produto!' });

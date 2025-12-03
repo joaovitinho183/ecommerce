@@ -100,6 +100,17 @@ addProduto.addEventListener("click", () => {
     window.location.href = "./html/produto.html";
 });
 
+function getImagemCompleta(url) {
+    if (!url) return "";
+
+    // Se já for link completo
+    if (url.startsWith("http")) return url;
+
+    // Remove / inicial
+    if (url.startsWith("/")) url = url.substring(1);
+
+    return `http://localhost:3000/${url}`;
+}
 // GERA TODOS OS PRODUTOS
 function gerarProdutos(dados) {
     let card = "";
@@ -107,7 +118,7 @@ function gerarProdutos(dados) {
     dados.forEach(produto => {
         card += `
             <div class="car-card">
-                <img src="${produto.imagem_url}" alt="">
+                <img src="${getImagemCompleta(produto.imagem_url)}">
                 <h3>${produto.nome}</h3>
                 <p>${produto.descricao}</p>
                 <p>R$ ${produto.preco}</p>

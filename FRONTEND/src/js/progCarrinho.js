@@ -18,6 +18,23 @@ usuarioBtn.onclick = () => {
     window.location.href = token ? "./usuario.html" : "./loginUsuario.html";
 };
 
+// Monta a URL completa da imagem (suporta URLs externas e paths locais)
+function getImagemCompleta(url) {
+    if (!url) return ""; // sem imagem
+
+    // se já for url completa (externa)
+    if (url.startsWith("http")) return url;
+
+    // remove /public/ se alguém salvou assim
+    url = url.replace(/^\/?public\//, "");
+    // remove barra inicial se existir
+    url = url.replace(/^\/+/, "");
+
+    // caminho servido pelo express.static('public') -> /imgs/...
+    // Se o DB já tiver "imgs/nome.jpg" ou "/imgs/nome.jpg" isso vira: http://localhost:3000/imgs/nome.jpg
+    return `http://localhost:3000/${url}`;
+}
+
 // ====== ATUALIZAR TELA ======
 function carregarCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -39,8 +56,12 @@ function carregarCarrinho() {
         let divItem = document.createElement("div");
         divItem.classList.add("item");
         console.log(item);
+
+        // monta src da imagem com a função (suporta local e externo)
+        const imgSrc = getImagemCompleta(item.imagem_url);
+
         divItem.innerHTML = `
-            <img src="${item.imaagem_url}">
+            <img src="${imgSrc}" alt="${item.nome}" onerror="this.style.opacity=0.2; this.nextElementSibling && (this.nextElementSibling.style.display='block');">
 
             <div class="info">
                 <h3>${item.nome}</h3>
@@ -54,7 +75,7 @@ function carregarCarrinho() {
             </div>
 
             <button class="remove-btn" onclick="removerItem(${index})">
-                <img src="../../public/imgs/trash.png">
+                <img src="../../public/imgs/trash.png" alt="Remover">
             </button>
         `;
 
@@ -68,7 +89,6 @@ function carregarCarrinho() {
 }
 
 onload = carregarCarrinho;
-
 
 // ====== ALTERAR QUANTIDADE ======
 function alterarQtd(i, valor) {
