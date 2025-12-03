@@ -5,10 +5,6 @@ let fecharModal = document.getElementById("fecharModal")
 let dadosPedidoDiv = document.getElementById("dadosPedido")
 
 window.onload = () => {
-    if (!token || sessionStorage.getItem("tipo_usuario") !== "ADMIN") {
-        return window.location.href = "../html/confirmAdimin.html"
-    }
-
     const fecharModalBtn = document.getElementById("fecharModal")
 
     fecharModalBtn.onclick = () => modal.style.display = "none"
