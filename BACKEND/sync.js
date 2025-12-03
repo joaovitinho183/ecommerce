@@ -1,23 +1,23 @@
-const conn = require('./db/conn') 
+const conn = require('./db/conn')
 
-const { 
-    Usuario, 
-    Pedido, 
-    Produto, 
-    ItemPedido, 
-    Entrega, 
-    Estoque 
-} = require('./models/rel') 
+const {
+    Usuario,
+    Pedido,
+    Produto,
+    ItemPedido,
+    Entrega,
+    Estoque
+} = require('./models/rel')
 
-async function syncDataBase(){
-    try{
-        await conn.sync({ force: true }) 
-        
+async function syncDataBase() {
+    try {
+        await conn.sync({ force: true })
+
         console.log('----------------------------')
         console.log('Banco de Dados sincronizado!')
         console.log('----------------------------')
 
-    }catch(err){
+    } catch (err) {
         console.error('ERRO: Não foi possível sincronizar o banco de dados!', err)
     } finally {
         await conn.close()

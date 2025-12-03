@@ -20,7 +20,7 @@ const Produto = db.define('produto',{
         allowNull: false,
     },
     preco: {
-        type: DataTypes.DECIMAL(10,2), // Preço de venda
+        type: DataTypes.DECIMAL(65,2), // Preço de venda
         allowNull: false
     },
     imagem_url: {
