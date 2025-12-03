@@ -1,4 +1,3 @@
-/* PALETA */
 :root {
     --black: #0A0A0A;
     --graphite: #2A2A2A;
@@ -18,11 +17,9 @@ body {
     background: var(--white);
 }
 
-/* HEADER */
 .header {
     background: var(--black);
     padding: 15px 40px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,10 +35,8 @@ body {
     border: 0;
 }
 
-/* HERO */
 .hero {
     height: 20vh;
-
     display: flex;
     align-items: center;
     padding-left: 60px;
@@ -58,7 +53,6 @@ body {
     color: var(--graphite);
 }
 
-/* MAIN */
 main {
     color: var(--black);
     padding-bottom: 60px;
@@ -73,7 +67,6 @@ main {
     font-size: 40px;
 }
 
-/* CARDS */
 .cards-container {
     margin-top: 30px;
     display: flex;
@@ -126,7 +119,6 @@ main {
     display: inline-block;
     margin: 0 15px 20px 15px;
     padding: 10px 20px;
-
     background: var(--red);
     color: white;
     text-decoration: none;
@@ -138,9 +130,6 @@ main {
     background: #990000;
 }
 
-/* ===========================
-    FOOTER
-    =========================== */
 footer {
     background: var(--black);
     color: var(--silver);
@@ -151,7 +140,6 @@ footer {
 .footer-container {
     width: 85%;
     margin: auto;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
@@ -187,15 +175,12 @@ footer {
     font-size: 14px;
 }
 
-/* BOTÃO ADICIONAR PRODUTO */
 .addProduto {
     width: 310px;
     height: 350px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background: var(--black);
     border: 2px solid var(--graphite);
     border-radius: 15px;
@@ -209,13 +194,11 @@ footer {
 #addProduto {
     background: transparent;
     border: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 15px;
-
     cursor: pointer;
 }
 
@@ -239,7 +222,24 @@ footer {
     color: var(--red);
 }
 
-/* CORREÇÃO PARA ALINHAR OS CARDS GERADOS DINAMICAMENTE */
 #newCars {
-    display: contents; 
+    display: contents;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.card-buttons button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card-buttons button:hover {
+    transform: scale(1.1);
 }

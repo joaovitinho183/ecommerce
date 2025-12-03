@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize')
-const db = require('../db/conn') 
+const db = require('../db/conn')
 
 const Entrega = db.define('entrega',{
     codEntrega: {
@@ -7,43 +7,43 @@ const Entrega = db.define('entrega',{
         primaryKey: true,
         autoIncrement: true
     },
-    idPedido: { // Chave estrangeira
+    idPedido: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true, 
+        unique: true,
         references: {
-            model: 'pedidos', 
-            key: 'codPedido'  
+            model: 'pedidos',
+            key: 'codPedido'
         }
     },
-    cep: { 
-        type: DataTypes.STRING(9), 
-        allowNull: false 
+    cep: {
+        type: DataTypes.STRING(9),
+        allowNull: false
     },
-    logradouro: { 
-        type: DataTypes.STRING(70), 
-        allowNull: false 
-    },
-    complemento: { 
-        type: DataTypes.STRING(100), 
-        allowNull: true 
-    },
-    bairro: { 
+    logradouro: {
         type: DataTypes.STRING(70),
-        allowNull: false 
+        allowNull: false
     },
-    localidade: { 
-        type: DataTypes.STRING(70), 
-        allowNull: false 
+    complemento: {
+        type: DataTypes.STRING(100),
+        allowNull: true
     },
-    uf: { 
-        type: DataTypes.STRING(2), 
-        allowNull: false 
+    bairro: {
+        type: DataTypes.STRING(70),
+        allowNull: false
     },
-    numero: { 
-        type: DataTypes.STRING(12), 
-        allowNull: false 
-    },    
+    localidade: {
+        type: DataTypes.STRING(70),
+        allowNull: false
+    },
+    uf: {
+        type: DataTypes.STRING(2),
+        allowNull: false
+    },
+    numero: {
+        type: DataTypes.STRING(12),
+        allowNull: false
+    },
     dataEstimada: {
         type: DataTypes.DATEONLY,
         allowNull: true

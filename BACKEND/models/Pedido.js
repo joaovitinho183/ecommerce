@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize')
-const db = require('../db/conn') 
+const db = require('../db/conn')
 
 const Pedido = db.define('pedido',{
     codPedido: {
@@ -7,12 +7,12 @@ const Pedido = db.define('pedido',{
         primaryKey: true,
         autoIncrement: true
     },
-    idUsuario: { 
+    idUsuario: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'usuarios', 
-            key: 'codUsuario'  
+            model: 'usuarios',
+            key: 'codUsuario'
         }
     },
     dataPedido: {
@@ -26,17 +26,17 @@ const Pedido = db.define('pedido',{
         defaultValue: 'PENDENTE_PAGAMENTO'
     },
     valorSubtotal: {
-        type: DataTypes.DECIMAL(10,2), 
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
         defaultValue: 0.00
     },
     valorFrete: {
-        type: DataTypes.DECIMAL(10,2), 
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
         defaultValue: 0.00
     },
     valorTotal: {
-        type: DataTypes.DECIMAL(10,2), 
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
         defaultValue: 0.00
     }

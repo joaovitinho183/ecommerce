@@ -11,16 +11,16 @@ const ItemPedido = db.define('itemPedido',{
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'pedidos', 
-            key: 'codPedido'  
+            model: 'pedidos',
+            key: 'codPedido'
         }
     },
     idProduto: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'produtos', 
-            key: 'codProduto'  
+            model: 'produtos',
+            key: 'codProduto'
         }
     },
     quantidade: {
@@ -29,21 +29,20 @@ const ItemPedido = db.define('itemPedido',{
         defaultValue: 1
     },
     precoUnitario: {
-        type: DataTypes.DECIMAL(10,2), 
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false
     },
-    valorTotalItem: { // O valor total da linha: quantidade * precoUnitario
+    valorTotalItem: {
         type: DataTypes.DECIMAL(10,2),
         allowNull: false,
         defaultValue: 0.00
     }
 },{
-    // Chave composta para garantir que o mesmo produto só possa aparecer uma vez por pedido
     indexes: [{
         unique: true,
         fields: ['idPedido', 'idProduto']
     }],
-    timestamps: false, // Geralmente desativado em tabelas N:N puras 
+    timestamps: false,
     tableName: 'itens_pedidos'
 })
 

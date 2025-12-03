@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-require('dotenv').config()  // carregar as variáveis de ambiente
+require('dotenv').config()
 const SALTOS = 10
 
 async function hashSenha(senha){

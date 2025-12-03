@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize')
-const db = require('../db/conn') 
+const db = require('../db/conn')
 
 const Produto = db.define('produto',{
     codProduto: {
@@ -13,24 +13,24 @@ const Produto = db.define('produto',{
     },
     descricao: {
         type: DataTypes.TEXT,
-        allowNull: true // Pode ser preenchida posteriormente
+        allowNull: true
     },
     modelo: {
         type: DataTypes.STRING(50),
-        allowNull: false,
+        allowNull: false
     },
     preco: {
-        type: DataTypes.DECIMAL(65,2), // Preço de venda
+        type: DataTypes.DECIMAL(65,2),
         allowNull: false
     },
     imagem_url: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.STRING(500),
         allowNull: true
     },
     ativo: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: true // Por padrão, o produto está visível para venda
+        defaultValue: true
     }
 },{
     timestamps: true,

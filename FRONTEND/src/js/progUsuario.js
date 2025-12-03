@@ -1,37 +1,37 @@
-let codUsuario = sessionStorage.getItem('codUsuario');
-let res = document.getElementById('res');
-let apagar = document.getElementById('apagar');
-let atualizar = document.getElementById('atualizar');
+let codUsuario = sessionStorage.getItem('codUsuario')
+let res = document.getElementById('res')
+let apagar = document.getElementById('apagar')
+let atualizar = document.getElementById('atualizar')
 
 onload = () => {
     fetch(`http://localhost:3000/usuario/${codUsuario}`)
         .then(resp => resp.json())
         .then(dados => {
-            res.innerHTML = gerarPerfil(dados);
+            res.innerHTML = gerarPerfil(dados)
         })
         .catch(err => {
-            console.error('Erro ao listar usuário', err);
-        });
-    };
-    
-    apagar.addEventListener('click', () => {
-        let confirma = confirm("Você tem certeza que quer excluir este Usuario?");
-        if (confirma === true) {
-            fetch(`http://localhost:3000/usuario/${codUsuario}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(dados => {
-                sessionStorage.clear()
-                window.location.href = '../index.html'
-            })
-            .catch(err => {
-                console.error('Erro ao apagar usuário', err);
-            });
-        }
-    })
+            console.error('Erro ao listar usuário', err)
+        })
+}
+
+apagar.addEventListener('click', () => {
+    let confirma = confirm("Você tem certeza que quer excluir este Usuario?")
+    if (confirma === true) {
+        fetch(`http://localhost:3000/usuario/${codUsuario}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(dados => {
+            sessionStorage.clear()
+            window.location.href = '../index.html'
+        })
+        .catch(err => {
+            console.error('Erro ao apagar usuário', err)
+        })
+    }
+})
 
 function gerarPerfil(dados) {
     return `
@@ -63,7 +63,5 @@ function gerarPerfil(dados) {
                 <span class="valor tipo">${dados.tipo_usuario}</span>
             </div>
         </div>
-    `;
+    `
 }
-
-

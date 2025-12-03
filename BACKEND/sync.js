@@ -12,11 +12,9 @@ const {
 async function syncDataBase() {
     try {
         await conn.sync({ force: true })
-
         console.log('----------------------------')
         console.log('Banco de Dados sincronizado!')
         console.log('----------------------------')
-
     } catch (err) {
         console.error('ERRO: Não foi possível sincronizar o banco de dados!', err)
     } finally {
@@ -25,5 +23,4 @@ async function syncDataBase() {
     }
 }
 
-// Chamar a função para sincronizar o banco de dados
 syncDataBase()

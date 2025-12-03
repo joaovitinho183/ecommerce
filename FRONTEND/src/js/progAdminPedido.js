@@ -1,27 +1,24 @@
-let token = sessionStorage.getItem("token");
-let tabelaPedidos = document.getElementById("tabelaPedidos");
-let modal = document.getElementById("modalPedido");
-let fecharModal = document.getElementById("fecharModal");
-let dadosPedidoDiv = document.getElementById("dadosPedido");
+let token = sessionStorage.getItem("token")
+let tabelaPedidos = document.getElementById("tabelaPedidos")
+let modal = document.getElementById("modalPedido")
+let fecharModal = document.getElementById("fecharModal")
+let dadosPedidoDiv = document.getElementById("dadosPedido")
 
 window.onload = () => {
     if (!token || sessionStorage.getItem("tipo_usuario") !== "ADMIN") {
-        return window.location.href = "../html/confirmAdimin.html";
+        return window.location.href = "../html/confirmAdimin.html"
     }
 
-    const fecharModalBtn = document.getElementById("fecharModal");
+    const fecharModalBtn = document.getElementById("fecharModal")
 
-    // Fecha ao clicar no X
-    fecharModalBtn.onclick = () => modal.style.display = "none";
+    fecharModalBtn.onclick = () => modal.style.display = "none"
 
-    // Fecha ao clicar fora do modal
     window.onclick = (event) => {
-        if (event.target === modal) modal.style.display = "none";
-    };
+        if (event.target === modal) modal.style.display = "none"
+    }
 
-    carregarPedidos();
-};
-
+    carregarPedidos()
+}
 
 const carregarPedidos = () => {
     fetch("http://localhost:3000/pedido/listar", {
@@ -31,17 +28,17 @@ const carregarPedidos = () => {
         }
     })
         .then(resp => {
-            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-            return resp.json();
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+            return resp.json()
         })
         .then(pedidos => {
-            console.log(pedidos);
+            console.log(pedidos)
 
-            if (!Array.isArray(pedidos)) throw new Error("Resposta inesperada do servidor");
+            if (!Array.isArray(pedidos)) throw new Error("Resposta inesperada do servidor")
 
-            tabelaPedidos.innerHTML = "";
+            tabelaPedidos.innerHTML = ""
             pedidos.forEach(p => {
-                let tr = document.createElement("tr");
+                let tr = document.createElement("tr")
                 tr.innerHTML = `
                 <td>${p.codPedido}</td>
                 <td>${p.usuario ? p.usuario.nome : "Não encontrado"}</td>
@@ -53,15 +50,15 @@ const carregarPedidos = () => {
                         Ver detalhes
                     </button>
                 </td>
-            `;
-                tabelaPedidos.appendChild(tr);
-            });
+            `
+                tabelaPedidos.appendChild(tr)
+            })
         })
-        .catch(err => console.error("Erro ao carregar pedidos:", err));
-};
-carregarPedidos();
+        .catch(err => console.error("Erro ao carregar pedidos:", err))
+}
+carregarPedidos()
 function verDetalhes(codPedido) {
-    const token = sessionStorage.getItem('token');
+    const token = sessionStorage.getItem('token')
     fetch(`http://localhost:3000/pedido/${codPedido}`, {
         headers: {
             'Content-Type': 'application/json',
@@ -69,14 +66,11 @@ function verDetalhes(codPedido) {
         }
     })
         .then(resp => {
-            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-            return resp.json();
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+            return resp.json()
         })
         .then(dados => {
-            // Limpa conteúdo anterior
-            dadosPedidoDiv.innerHTML = "";
-
-            // Informações gerais
+            dadosPedidoDiv.innerHTML = ""
             dadosPedidoDiv.innerHTML += `
                 <h3>Pedido #${dados.codPedido}</h3>
                 <p><strong>Cliente:</strong> ${dados.usuario?.nome || "Não encontrado"}</p>
@@ -85,11 +79,9 @@ function verDetalhes(codPedido) {
                 <p><strong>Subtotal:</strong> R$ ${Number(dados.valorSubtotal).toFixed(2)}</p>
                 <p><strong>Frete:</strong> R$ ${Number(dados.valorFrete || 0).toFixed(2)}</p>
                 <p><strong>Total:</strong> R$ ${Number(dados.valorTotal).toFixed(2)}</p>
-            `;
-
-            // Itens do pedido
+            `
             if (dados.itens && dados.itens.length > 0) {
-                let itensHTML = "<h3>Itens:</h3><ul>";
+                let itensHTML = "<h3>Itens:</h3><ul>"
                 dados.itens.forEach(item => {
                     itensHTML += `
                         <li>
@@ -98,13 +90,11 @@ function verDetalhes(codPedido) {
                             Preço Unitário: R$ ${Number(item.precoUnitario).toFixed(2)} -
                             Total: R$ ${Number(item.valorTotalItem).toFixed(2)}
                         </li>
-                    `;
-                });
-                itensHTML += "</ul>";
-                dadosPedidoDiv.innerHTML += itensHTML;
+                    `
+                })
+                itensHTML += "</ul>"
+                dadosPedidoDiv.innerHTML += itensHTML
             }
-
-            // Entrega
             if (dados.entrega) {
                 dadosPedidoDiv.innerHTML += `
                     <h3>Entrega:</h3>
@@ -112,11 +102,9 @@ function verDetalhes(codPedido) {
                     <p>${dados.entrega.bairro} - ${dados.entrega.localidade}/${dados.entrega.uf}</p>
                     <p>CEP: ${dados.entrega.cep}</p>
                     <p>Status entrega: ${dados.entrega.statusEntrega || "N/A"}</p>
-                `;
+                `
             }
-
-            modal.style.display = "block";
+            modal.style.display = "block"
         })
-        .catch(err => console.error("Erro ao carregar detalhes:", err));
+        .catch(err => console.error("Erro ao carregar detalhes:", err))
 }
-

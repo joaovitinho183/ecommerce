@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-require('dotenv').config()  // carregar as variáveis de ambiente
+require('dotenv').config()
 const SEGREDO = process.env.JWT_SECRET
 
 function gerarToken(payload) {

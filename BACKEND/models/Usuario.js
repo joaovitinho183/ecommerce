@@ -16,22 +16,22 @@ const Usuario = db.define('usuario',{
         allowNull: false,
         unique: true
     },
-    senha: { // Campo para armazenar a hash da senha
-        type: DataTypes.STRING(255), 
-        allowNull: false 
+    senha: {
+        type: DataTypes.STRING(255),
+        allowNull: false
     },
     telefone: {
         type: DataTypes.STRING(20),
         allowNull: false
     },
-    cpf: { 
-        type: DataTypes.STRING(14), // ampo para CPF '123.456.789-55'
+    cpf: {
+        type: DataTypes.STRING(14),
         allowNull: false,
         unique: true
     },
     identidade: {
-        type: DataTypes.STRING(20), // Campo para Identidade (RG ou outro documento)
-        allowNull: true, // Permitindo NULL, já que CPF é obrigatório
+        type: DataTypes.STRING(20),
+        allowNull: true
     },
     tipo_usuario: {
         type: DataTypes.ENUM('CLIENTE', 'ADMIN'),
@@ -39,7 +39,7 @@ const Usuario = db.define('usuario',{
         defaultValue: 'CLIENTE'
     }
 },{
-    timestamps: true, 
+    timestamps: true,
     tableName: 'usuarios'
 })
 

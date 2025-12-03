@@ -6,7 +6,6 @@
     --white: #F6F6F6;
 }
 
-/* RESET GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +18,6 @@ body {
     color: var(--black);
 }
 
-/* HEADER */
 .header {
     background: var(--black);
     padding: 15px 40px;
@@ -28,7 +26,6 @@ body {
     align-items: center;
 }
 
-/* MAIN / CARD */
 main {
     min-height: calc(100vh - 250px);
     padding: 40px 20px;
@@ -51,7 +48,6 @@ h1 {
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* TABELA */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -86,7 +82,6 @@ tr:hover {
 .btn-detalhes:hover {
     background: #990000;
 }
-
 
 .modal {
     position: fixed;
@@ -146,7 +141,6 @@ tr:hover {
     text-decoration: none;
 }
 
-/* FOOTER */
 footer {
     background: var(--black);
     color: var(--silver);
