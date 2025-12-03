@@ -1,0 +1,180 @@
+/* ===========================
+   PALETA DE CORES
+   =========================== */
+:root {
+    --black: #0A0A0A;
+    --graphite: #2A2A2A;
+    --silver: #CFCFCF;
+    --red: #D10000;
+    --white: #F6F6F6;
+}
+
+/* ===========================
+   RESET / GLOBAL
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.header {
+    background: var(--black);
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .conta {
+    display: flex;
+    gap: 60px;
+}
+
+/* ===========================
+   MAIN / CARD
+   =========================== */
+main {
+    min-height: calc(100vh - 250px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* CARD */
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--black);
+    border: 2px solid var(--graphite);
+    border-radius: 14px;
+    padding: 32px 26px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* TÍTULO */
+.card h1, #res {
+    font-size: 28px;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* LABEL */
+.card label {
+    font-size: 16px;
+    color: var(--silver);
+}
+
+/* INPUT */
+.card input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--graphite);
+    background: #111;
+    color: var(--white);
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.card input::placeholder {
+    color: #777;
+}
+
+.card input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 6px rgba(209, 0, 0, 0.6);
+}
+
+/* BOTÃO */
+.btn-card {
+    padding: 12px 20px;
+    background: var(--red);
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+
+    transition: 0.3s ease;
+}
+
+.btn-card:hover {
+    background: #990000;
+    transform: scale(1.03);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    background: var(--black);
+    color: var(--silver);
+    padding: 60px 0 25px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    width: 85%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons img {
+    transition: 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid var(--graphite);
+    padding-top: 20px;
+    font-size: 14px;
+}
+

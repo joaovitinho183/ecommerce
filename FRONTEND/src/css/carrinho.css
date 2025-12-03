@@ -1,3 +1,192 @@
+/* PALETA */
+:root {
+    --black: #0A0A0A;
+    --graphite: #2A2A2A;
+    --silver: #CFCFCF;
+    --red: #D10000;
+    --white: #F6F6F6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+body {
+    background: var(--white);
+}
+
+/* HEADER */
+.header {
+    background: var(--black);
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .conta {
+    display: flex;
+    gap: 60px;
+}
+
+.header .conta button {
+    background-color: transparent;
+    border: 0;
+}
+
+/* HERO */
+.hero {
+    height: 20vh;
+
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.hero-text h1 {
+    font-size: 55px;
+    color: var(--black);
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin: 15px 0;
+    color: var(--graphite);
+}
+
+/* MAIN */
+main {
+    color: var(--black);
+    padding-bottom: 60px;
+}
+
+.modelos {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.modelos h2 {
+    font-size: 40px;
+}
+
+/* CARDS */
+.cards-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.car-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 310px;
+    background: var(--black);
+    border: 2px solid var(--graphite);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.car-card:hover {
+    transform: scale(1.01);
+}
+
+.car-card img {
+    width: 100%;
+}
+
+.car-card h3 {
+    font-size: 24px;
+    color: var(--white);
+    margin: 15px;
+}
+
+.car-card p {
+    font-size: 16px;
+    color: var(--silver);
+    margin: 0 15px 18px 15px;
+}
+
+.car-card button {
+    background-color: transparent;
+    border: 0;
+    width: 40px;
+    margin: 10px;
+}
+
+.btn-card {
+    display: inline-block;
+    margin: 0 15px 20px 15px;
+    padding: 10px 20px;
+
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    background: #990000;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    background: var(--black);
+    color: var(--silver);
+    padding: 60px 0 25px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    width: 85%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons img {
+    transition: 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid var(--graphite);
+    padding-top: 20px;
+    font-size: 14px;
+}
+
 /* ===========================
    CARRINHO PROFISSIONAL
    =========================== */
@@ -95,7 +284,9 @@
 }
 
 .remove-btn img {
-    width: 28px;
+    width: 40px;
+    height: 40px;
+    border: 0;
 }
 
 .remove-btn:hover {
@@ -144,4 +335,69 @@
         width: 52px;
         height: 52px;
     }
+}
+
+
+/* ===========================
+   QUANTIDADE DO ITEM
+   =========================== */
+
+.qtd-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.qtd-btn {
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 22px;
+    font-weight: bold;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.qtd-btn:hover {
+    background: var(--red);
+    color: white;
+    transform: scale(1.1);
+}
+
+.qtd-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+
+/* ===========================
+   FINALIZAR COMPRA
+   =========================== */
+.finalizar-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.finalizar-btn {
+    background: var(--red);
+    color: var(--white);
+    padding: 18px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.finalizar-btn:hover {
+    background: #990000;
+    transform: scale(1.05);
 }

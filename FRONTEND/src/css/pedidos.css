@@ -1,0 +1,160 @@
+/* Estilos específicos para a tela de Pedidos */
+
+.pedidos-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding-bottom: 80px;
+    color: var(--black);
+}
+
+.pedidos-main h1 {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.lista-pedidos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pedido-card {
+    background: var(--white);
+    border: 2px solid var(--graphite);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--silver);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.pedido-header h2 {
+    font-size: 24px;
+    color: var(--black);
+}
+
+.pedido-header p {
+    font-size: 16px;
+    color: var(--graphite);
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+/* Cores de Status */
+.status-PENDENTE_PAGAMENTO { background-color: orange; }
+.status-PAGO { background-color: green; }
+.status-ENVIADO, .status-EM_TRANSITO { background-color: var(--red); }
+.status-ENTREGUE { background-color: darkgreen; }
+.status-SAIU_PARA_ENTREGA { background-color: rgb(100, 0, 0); }
+.status-CANCELADO, .status-EXTRAVIADO { background-color: darkred; }
+
+
+.itens-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.item-pedido {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px dashed var(--silver);
+    padding-bottom: 10px;
+}
+
+.item-pedido:last-child {
+    border-bottom: none;
+}
+
+.item-pedido img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    font-size: 18px;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    font-size: 14px;
+    color: var(--graphite);
+}
+
+.pedido-footer {
+    padding-top: 15px;
+    border-top: 1px solid var(--silver);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.valores p {
+    font-size: 16px;
+    color: var(--graphite);
+    margin-bottom: 5px;
+}
+
+.valores strong {
+    color: var(--black);
+}
+
+.entrega-info p {
+    font-size: 14px;
+    color: var(--graphite);
+    line-height: 1.4;
+}
+
+.entrega-info strong {
+    color: var(--black);
+}
+
+.cod-rastreio {
+    font-weight: bold;
+    color: var(--red) !important;
+}
+
+@media (max-width: 600px) {
+    .pedido-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .pedido-footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .item-pedido {
+        flex-direction: column;
+        text-align: center;
+    }
+    .item-info {
+        text-align: center;
+    }
+}

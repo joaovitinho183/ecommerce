@@ -41,84 +41,15 @@
 
             <div class="cards-container">
 
-                <div class="car-card">
-                    <img src="../public/imgs/911TurboS.jpg" alt="">
-                    <h3>Porsche 911 Turbo S</h3>
-                    <p> O topo da linha 911. Agora com tecnologia T-Hybrid, combinando motor boxer biturbo com sistema
-                        elétrico. É o 911 mais rápido e avançado da geração 992.2.</p>
-                    <p>R$ 2.100.000</p>
-                    <button onclick="addCar('Porsche 911 Turbo S', 2100000, '../../public/imgs/911TurboS.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
+                <!-- AQUI ENTRA OS PRODUTOS DO BANCO -->
+                <div id="newCars"></div>
 
-                <div class="car-card">
-                    <img src="../public/imgs/911GT3.jpg" alt="">
-                    <h3>Porsche 911 GT3</h3>
-                    <p> Versão de pista, leve, agressiva e com motor aspirado. É o modelo favorito dos puristas e
-                        entusiastas de track day.</p>
-                    <p>R$ 1.467.000</p>
-                    <button onclick="addCar('Porsche 911 GT3', 1467000, '../../public/imgs/911GT3.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../public/imgs/911CarreraGTS.jpg" alt="">
-                    <h3>Porsche 911 Carrera GTS</h3>
-                    <p> Equilíbrio perfeito entre luxo e esportividade. Usa sistema T-Hybrid, com desempenho forte porém
-                        mais civilizado que o Turbo.</p>
-                    <p>R$ 1.127.000</p>
-                    <button onclick="addCar('Porsche 911 Carrera GTS', 1127000, '../../public/imgs/911CarreraGTS.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../public/imgs/TaycanTurboS.jpg" alt="">
-                    <h3>Porsche Taycan Turbo S</h3>
-                    <p> O elétrico mais potente “padrão” da Porsche. Desempenho extremo, aceleração brutal e engenharia
-                        elétrica de ponta.</p>
-                    <p>R$ 1.435.000</p>
-                    <button onclick="addCar('Porsche Taycan Turbo S', 1435000, '../../public/imgs/TaycanTurboS.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../public/imgs/TaycanTurboGT.jpg" alt="">
-                    <h3>Porsche Taycan Turbo GT</h3>
-                    <p> Versão superesportiva, mais focada em performance extrema do que qualquer outro Taycan. Pegada
-                        de supercarro elétrico.</p>
-                    <p>R$ 1.535.000</p>
-                    <button onclick="addCar('Porsche Taycan Turbo GT', 1535000, '../../public/imgs/TaycanTurboGT.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../public/imgs/Taycan4SCrossTurismo.jpg" alt="">
-                    <h3>Porsche Taycan 4S Cross Turismo</h3>
-                    <p> A combinação ideal de praticidade e esportividade. Estilo perua esportiva com tração integral e
-                        autonomia sólida.</p>
-                    <p>R$ 935.000</p>
-                    <button onclick="addCar('Porsche Taycan 4S Cross Turismo', 935000, '../../public/imgs/Taycan4SCrossTurismo.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../public/imgs/PanameraTurboSE-Hybrid.jpeg" alt="">
-                    <h3>Porsche Panamera Turbo S E-Hybrid</h3>
-                    <p> Sedã de luxo rápido, híbrido plug-in. Motor V8 turbo combinado com motor elétrico. Muito potente
-                        e eficiente.</p>
-                    <p>R$ 1.573.000</p>
-                    <button onclick="addCar('Porsche Panamera Turbo S E-Hybrid', 1573000, '../../public/imgs/PanameraTurboSE-Hybrid.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../public/imgs/PanameraGTS.jpeg" alt="">
-                    <h3>Porsche Panamera GTS</h3>
-                    <p> Versão esportiva com foco em desempenho puro. Suspensão mais firme, visual agressivo e motor
-                        poderoso.</p>
-                    <p>R$ 803.000</p>
-                    <button onclick="addCar('Porsche Panamera GTS', 803000, '../../public/imgs/PanameraGTS.jpg')"><img src="../public/imgs/shopping-cart-add.png" alt=""
-                            width="40"></button>
+                <!-- BOTÃO ADICIONAR -->
+                <div class="addProduto">
+                    <button id="addProduto">
+                        <img src="../public/imgs/plus.png" width="40">
+                        <p>Adicionar carro para venda</p>
+                    </button>
                 </div>
 
             </div>
@@ -137,10 +68,9 @@
             <div class="footer-social">
                 <h4>Redes Sociais</h4><br>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/ojoaovitor08/"><img src="../public/imgs/instagram.png" alt=""
+                    <a href="https://www.instagram.com/ojoaovitor08/"><img src="../public/imgs/instagram.png"
                             width="30"></a>
-                    <a href="https://github.com/joaovitinho183"><img src="../public/imgs/github.png" alt=""
-                            width="30"></a>
+                    <a href="https://github.com/joaovitinho183"><img src="../public/imgs/github.png" width="30"></a>
                 </div>
             </div>
 

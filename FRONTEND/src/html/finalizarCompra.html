@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/usuario.css">
-    <script src="../js/progUsuario.js" defer></script>
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="../css/finalizarCompra.css">
+    <script src="../js/progFinalizarCompra.js" defer></script>
     <link rel="shortcut icon" href="../../public/imgs/logo.png" type="image/x-icon">
     <title>Carrera One</title>
 </head>
@@ -15,21 +16,33 @@
     <!-- HEADER -->
     <header class="header">
         <img class="logo" src="../../public/imgs/logo-removebg-preview.png" alt="Logo Carrera One" width="100">
-        <div class="conta">
-            <a href="../index.html"><img src="../../public/imgs/angle-left.png" width="40" alt="Voltar"></a>
-            <a href="../html/adminPedido.html"><img src="../../public/imgs/eye.png" width="40" alt="Pedidos"></a>
-
-        </div>
+        <a href="../index.html"><img src="../../public/imgs/angle-left.png" width="40" alt="Voltar"></a>
     </header>
 
-    <!-- FORMULÁRIO -->
     <main>
         <div class="card">
-            <h1>Usuário</h1><br>
-            <div id="res" class="perfil-container"></div>
-            <div class="btns">
-                <button class="apagar" id="apagar"><img src="../../public/imgs/trash.png" alt="" width="40"></button>
-            </div><br>
+            <h1>Finalizar Compra</h1>
+
+            <form id="formEntrega">
+                <h2>Endereço de Entrega</h2>
+
+                <input type="text" id="cep" placeholder="CEP"><br>
+                <button class="btn-card" id="btnBuscarCep">Buscar</button><br><br>
+
+                <input type="text" id="logradouro" placeholder="Logradouro"><br><br>
+
+                <input type="text" id="localidade" placeholder="Cidade"><br><br>
+
+                <input type="text" id="bairro" placeholder="Bairro"><br><br>
+                
+                <input type="text" id="uf" placeholder="UF"><br><br>
+
+                <input type="text" id="numero" placeholder="Número"><br><br>
+
+                <input type="text" id="complemento" placeholder="Complemento"><br><br>
+
+                <button class="btn-card" id="btnFinalizarCompra">Finalizar Compra</button><br><br>
+            </form>
         </div>
     </main>
 
@@ -48,7 +61,7 @@
                     <a href="https://www.instagram.com/ojoaovitor08/">
                         <img src="../../public/imgs/instagram.png" width="30" alt="Instagram">
                     </a>
-                    <a href="https://github.com/joaovitinho183">
+                    <a href="https://github.com/joaovitinho83">
                         <img src="../../public/imgs/github.png" width="30" alt="GitHub">
                     </a>
                 </div>
@@ -60,7 +73,6 @@
             <p>© 2025 Carrera One. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 </body>
 
 </html>

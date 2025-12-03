@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/produto.css">
+    <script src="../js/progProduto.js" defer></script>
+    <link rel="shortcut icon" href="../../public/imgs/logo.png" type="image/x-icon">
+    <title>Carrera One</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img class="logo" src="../../public/imgs/logo-removebg-preview.png" alt="Logo Carrera One" width="100">
+        <a href="../index.html"><img src="../../public/imgs/angle-left.png" width="40" alt="Voltar"></a>
+    </header>
+
+    <!-- FORMULÁRIO -->
+    <main>
+        <div class="card">
+            <h1>Cadastro de Produto</h1><br>
+
+            <form id="formCadastro">
+
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" placeholder="ex: Porsche 911 Turbo S"><br><br>
+
+                <label for="descricao">Descrição:</label><br>
+                <input type="descricao" id="descricao" placeholder="ex: O topo da linha 911"><br><br>
+
+                <label for="modelo">Modelo:</label><br>
+                <input type="text" id="modelo" placeholder="ex: 911"><br><br>
+
+                <label for="preco">Preço:</label><br>
+                <input type="number" id="preco" placeholder="ex: 2.100.000"><br><br>
+
+                <label for="imagem_url">Imagem_url:</label><br>
+                <input type="text" id="imagem_url"
+                    placeholder="ex: https://porschepictures.flowcenter.de/pmdb/thumbnail.cgi?id=323857&w=1440&h=812&crop=1&public=1&cs=9c8d86c8e1c1cc56"><br><br>
+
+                <label for="quantidade">Quantidade:</label><br>
+                <input type="number" id="quantidade" placeholder="ex: 10"><br><br>
+
+                <button class="btn-card" id="btnCadastrar" type="button">Cadastrar</button><br><br>
+
+                <div id="res"></div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+
+            <div>
+                <div class="footer-logo">CARRERA <span>ONE</span></div><br>
+                <p>Exclusividade, velocidade e sofisticação em um só lugar.</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Redes Sociais</h4><br>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ojoaovitor08/">
+                        <img src="../../public/imgs/instagram.png" width="30" alt="Instagram">
+                    </a>
+                    <a href="https://github.com/joaovitinho83">
+                        <img src="../../public/imgs/github.png" width="30" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Carrera One. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

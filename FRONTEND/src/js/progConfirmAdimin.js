@@ -1,19 +1,20 @@
+let codUsuario = sessionStorage.getItem('codUsuario')
+let tipo_usuario = sessionStorage.getItem('tipo_usuario')
 let btnlogin = document.getElementById('btnlogin')
 let res = document.getElementById('res')
 
 btnlogin.addEventListener('click', (e) => {
     e.preventDefault()
 
-    let email = document.getElementById('email').value
-    let senha = document.getElementById('senha').value
+    let codAdimin = document.getElementById('codAdimin').value
 
     const valores = {
-        email: email,
-        senha: senha
+        codUsuario: codUsuario,
+        codAdimin: codAdimin
     }
 
     fetch(`http://localhost:3000/login`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -22,9 +23,12 @@ btnlogin.addEventListener('click', (e) => {
         .then(resp => resp.json())
         .then(dados => {
             res.innerHTML = `${dados.message}`
-            sessionStorage.setItem('token', dados.token)
-            sessionStorage.setItem('codUsuario', dados.codUsuario)
             sessionStorage.setItem('tipo_usuario', dados.tipo_usuario)
+            tipo_usuario = sessionStorage.getItem('tipo_usuario')
+
+            if (tipo_usuario === 'ADMIN') {
+                window.location.href = './produto.html'
+            }
         })
         .catch((err) => {
             console.error('Erro ao fazer login', err)
